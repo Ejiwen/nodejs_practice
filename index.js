@@ -1,8 +1,9 @@
-const logger = require('./logger');
-const MyEvent = require('./logger');
+const {createServer} = require('http');
 
-const myevent = new MyEvent();
-myevent.on("message", (data) => console.log('Event Fired', data));
+function serv(req,res){
+    res.write('Hello World');
+    res.end();
+}
 
-myevent.log("message");
-// Event Fired { id: '3a04e2ea-537d-4ccf-8096-7e6a13ebf858', msg: 'message' }
+let server = createServer(serv);
+server.listen(8080, () => console.log('server listening ...'));
