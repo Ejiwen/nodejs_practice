@@ -1,9 +1,13 @@
-const {createServer} = require('http');
+// const {createServer} = require('http');
 
-function serv(req,res){
-    res.write('Hello World');
-    res.end();
-}
+const fileOperation = require('./utils/file_utils.js');
 
-let server = createServer(serv);
-server.listen(8080, () => console.log('server listening ...'));
+fileOperation.createFile("files",'test2.html');
+
+// function serv(req,res){
+//     res.write('Hello World',req);
+//     res.end();
+// }
+
+// let server = createServer(serv);
+// server.listen(8080, () => console.log('server listening ...'));
